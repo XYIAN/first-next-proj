@@ -1,5 +1,6 @@
+'use client';
 import Image from 'next/image';
-import styles from './page.module.css';
+import styles from '../page.module.css';
 import { PrimeReactProvider, PrimeReactContext } from 'primereact/api';
 import 'primereact/resources/themes/lara-dark-purple/theme.css';
 import 'primereact/resources/primereact.min.css';
@@ -10,11 +11,11 @@ import { useState } from 'react';
 import { Button } from 'primereact/button';
 
 export default function Home() {
-    // const [visible, setVisible] = useState(false);
+    const [visible, setVisible] = useState(false);
     return (
         <PrimeReactProvider>
             <main>
-                {/* <Sidebar
+                <Sidebar
                     visible={visible}
                     onHide={() => setVisible(false)}
                     position='left'
@@ -35,12 +36,10 @@ export default function Home() {
                 <Button
                     icon='pi pi-arrow-right'
                     onClick={() => setVisible(true)}
-                /> */}
+                />
                 <Panel
                     toggleable
-                    header={
-                        <h1 className={styles.title}>XYIAN Example Site</h1>
-                    }
+                    header={<h1 className={styles.title}>Home Page</h1>}
                 >
                     <div>
                         <h2>This is an example of a basic web app. </h2>
