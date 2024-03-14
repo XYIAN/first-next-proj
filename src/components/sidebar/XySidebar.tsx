@@ -1,14 +1,13 @@
 import { Sidebar, SidebarProps } from 'primereact/sidebar';
 import { useState } from 'react';
 import { XyButton } from '../XyButton';
+import React from 'react';
 
-interface XySidebarProps extends Partial<SidebarProps> {
-    onClick?: () => void;
-}
-export const XySidebar = ({ onClick, ...other }: XySidebarProps) => {
+interface XySidebarProps extends Partial<SidebarProps> {}
+export const XySidebar = ({ ...other }: XySidebarProps) => {
     const [visible, setVisible] = useState(false);
     return (
-        <>
+        <React.Fragment>
             <div className='w-full justify-content-end'>
                 <XyButton
                     icon='pi pi-bars'
@@ -22,11 +21,10 @@ export const XySidebar = ({ onClick, ...other }: XySidebarProps) => {
                 visible={visible}
                 onHide={() => {
                     setVisible(false);
-                    if (onClick) onClick();
                 }}
                 position='right'
                 content={
-                    <>
+                    <React.Fragment>
                         <h2>Sidebar</h2>
                         <p>
                             Lorem ipsum dolor sit amet, consectetur adipiscing
@@ -35,9 +33,9 @@ export const XySidebar = ({ onClick, ...other }: XySidebarProps) => {
                             nostrud exercitation ullamco laboris nisi ut aliquip
                             ex ea commodo consequat.
                         </p>
-                    </>
+                    </React.Fragment>
                 }
             />
-        </>
+        </React.Fragment>
     );
 };
