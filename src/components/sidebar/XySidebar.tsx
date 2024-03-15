@@ -25,14 +25,15 @@ export const XySidebar = ({ ...other }: XySidebarProps) => {
                 position='right'
                 content={
                     <React.Fragment>
-                        <h2>Sidebar</h2>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit, sed do eiusmod tempor incididunt ut labore et
-                            dolore magna aliqua. Ut enim ad minim veniam, quis
-                            nostrud exercitation ullamco laboris nisi ut aliquip
-                            ex ea commodo consequat.
-                        </p>
+                        <h3>Menu</h3>
+                        <div className='flex flex-column gap-4 align-content-center'>
+                            <a href='/contact' className='p-button font-bold'>
+                                Contact Me
+                            </a>
+                            <a href='/portfolio' className='p-button font-bold'>
+                                Portfolio
+                            </a>
+                        </div>
                     </React.Fragment>
                 }
             />

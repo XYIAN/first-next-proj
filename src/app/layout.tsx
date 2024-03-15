@@ -6,6 +6,7 @@ import 'primereact/resources/themes/lara-dark-purple/theme.css';
 import 'primereact/resources/primereact.min.css';
 import 'primeicons/primeicons.css';
 import { PrimeReactProvider } from 'primereact/api';
+import { XySidebar } from '@/components';
 
 const inter = Inter({ subsets: ['latin'] });
 
