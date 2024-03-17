@@ -8,6 +8,7 @@ export interface XyLabelFieldProps {
     fieldSize?: LabelFieldSize;
     inline?: boolean;
     required?: boolean;
+    align?: 'right' | 'left' | 'center';
 }
 
 export const XyLabelField = ({
@@ -17,18 +18,30 @@ export const XyLabelField = ({
     fieldSize,
     inline,
     required,
+    align,
 }: XyLabelFieldProps) => {
     const { getSize } = Helpers();
     const RequiredIcon = (
-        <b style={{ color: 'red', transform: 'translate(10,30)' }}>*</b>
+        <b
+            style={{
+                color: 'red',
+                transform: 'translateX(-10px)',
+                position: 'fixed',
+            }}
+        >
+            *
+        </b>
     );
     return label ? (
         <div
-            className={`flex gap-2 align-items-center ${
+            className={`flex gap-2 justify-content-center ${
                 inline === true ? 'flex-row' : 'flex-column'
             } `}
         >
-            <div style={{ width: getSize(labelSize) }}>
+            <div
+                style={{ width: getSize(labelSize) }}
+                className={`${align ? 'text-' + align : undefined} text-right`}
+            >
                 {required && RequiredIcon}
                 {label}:
             </div>

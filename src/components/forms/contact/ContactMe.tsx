@@ -29,32 +29,36 @@ export const ContactMe = () => {
         >
             <form onSubmit={handleSubmit(onSubmit)} id='contact-form'>
                 <div className='flex w-full flex-column align-content-center justify-content-center'>
-                    <div>
-                        <XyInputText
-                            control={control}
-                            errors={errors}
-                            name='firstName'
-                            label='First Name'
-                            rules={{ required: true }}
-                            required
-                        />
-                    </div>
-                    <div>
-                        <XyInputText
-                            control={control}
-                            errors={errors}
-                            name='lastName'
-                            label='Last Name:'
-                        />
-                    </div>
-                </div>
-                <div className='flex justify-content-center align-items-center'>
-                    <XyButton
-                        label='Reset Form'
-                        type='reset'
-                        onClick={() => reset()}
+                    <XyInputText
+                        control={control}
+                        errors={errors}
+                        name='firstName'
+                        label='First Name'
+                        rules={{ required: true }}
+                        required
+                        inline
                     />
-                    <XyButton type='submit' label='Submit' />
+
+                    <XyInputText
+                        control={control}
+                        errors={errors}
+                        name='lastName'
+                        label='Last Name'
+                        inline
+                    />
+                    <div className='flex w-full justify-content-center'>
+                        <XyButton
+                            label='Reset Form'
+                            type='reset'
+                            onClick={() => reset()}
+                            className='flex flex-1'
+                        />
+                        <XyButton
+                            type='submit'
+                            label='Submit'
+                            className='flex flex-1'
+                        />
+                    </div>
                 </div>
             </form>
         </Panel>

@@ -18,9 +18,9 @@ export const Helpers = () => {
             case 'lg':
                 return '250px';
             case 'med':
-                return '200px';
-            case 'sm':
                 return '150px';
+            case 'sm':
+                return '100px';
             default:
                 return '200px';
         }
