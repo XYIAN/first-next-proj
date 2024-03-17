@@ -41,7 +41,6 @@ export const XySidebar = ({ ...other }: XySidebarProps) => {
                             <XyButton
                                 onClick={() => setVisible(false)}
                                 icon='pi pi-arrow-left'
-                                className=''
                             />
                         </div>
                         <h3
