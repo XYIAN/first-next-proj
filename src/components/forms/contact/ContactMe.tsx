@@ -1,26 +1,30 @@
 'use client';
 import { Panel } from 'primereact/panel';
 import { XyInputText } from '@/common/Inputs/XyInputText';
-import { useForm } from 'react-hook-form';
+import {
+    Control,
+    FieldErrors,
+    UseFormHandleSubmit,
+    UseFormReset,
+    useForm,
+} from 'react-hook-form';
 import { XyButton } from '@/common/XyButton';
-export interface ContactModel {
-    firstName: string;
-    lastName: string;
-    phoneNumber: number;
-    email: string;
-    message: string;
-}
-export const ContactMe = () => {
-    const {
-        control,
-        formState: { errors },
-        handleSubmit,
-        reset,
-    } = useForm<ContactModel>();
+import { ContactModel } from '@/types/forms';
 
-    const onSubmit = (data: ContactModel) => {
-        console.log(data);
-    };
+interface ContactMeProps {
+    handleSubmit: UseFormHandleSubmit<ContactModel>;
+    onSubmit: (data: ContactModel) => void;
+    errors: FieldErrors<ContactModel>;
+    reset: UseFormReset<ContactModel>;
+    control: Control<ContactModel>;
+}
+export const ContactMe = ({
+    handleSubmit,
+    onSubmit,
+    errors,
+    reset,
+    control,
+}: ContactMeProps) => {
     return (
         <Panel
             header='Contact Form'
@@ -34,11 +38,8 @@ export const ContactMe = () => {
                         errors={errors}
                         name='firstName'
                         label='First Name'
-                        rules={{ required: true }}
-                        required
                         inline
                     />
-
                     <XyInputText
                         control={control}
                         errors={errors}
@@ -49,7 +50,6 @@ export const ContactMe = () => {
                     <div className='flex w-full justify-content-center'>
                         <XyButton
                             label='Reset Form'
-                            type='reset'
                             onClick={() => reset()}
                             className='flex flex-1'
                         />

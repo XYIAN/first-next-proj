@@ -50,8 +50,9 @@ export const XyInputText = ({
                         labelSize={labelSize}
                         field={
                             <InputText
+                                {...field}
                                 id={field.name}
-                                value={field.value}
+                                value={field.value || ''}
                                 className={classNames({
                                     'p-invalid': fieldState.error,
                                 })}
