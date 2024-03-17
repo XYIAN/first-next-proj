@@ -1,4 +1,5 @@
 export * from './forms';
 //export * from './buttons'
 export * from './sidebar/XySidebar';
-export * from './XyPanel';
+export * from '../common/XyPanel';
+export * from './cards/PhotoLinkCard';

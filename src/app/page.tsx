@@ -1,14 +1,14 @@
 'use client';
-import styles from './page.module.css';
-import { XySidebar, XyPanel } from '@/components';
+import { XyInputText } from '@/common';
+import { XySidebar, XyPanel, PhotoLinkCard } from '@/components';
 import React from 'react';
-import { Button } from 'primereact/button';
 
 export default function Page() {
     return (
         <React.Fragment>
             <div>
                 <XySidebar />
+                <PhotoLinkCard />
                 {/* <XyPanel
                 header={<h1 className={styles.title}>XYIAN Example Site</h1>}
             >
